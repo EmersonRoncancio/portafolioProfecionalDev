@@ -14,7 +14,7 @@ export const AppPortafolio = () => {
   const {darkMode} = useGlobalState()
 
   return (
-    <main className={`-z-20 w-full h-full py-[30px] duration-700 ${darkMode?"bg-white":"bg-black"} font-sans`}>
+    <main className={`-z-20 w-full h-full py-[30px] duration-700 ${darkMode?"bg-white":"bg-black"} font-semibold`}>
         <div className="grid md:grid-cols-4 md:grid-rows-4 h-full md:h-[130vh] sm:max-w-[600px] max-w-[320px] md:max-w-[800px] lg:max-w-[1100px] xl:max-w-[1300px] grid-cols-1 mx-auto gap-5 md:px-4 xl:px-0">
             <Seccion1/>
             <Seccion2/>
