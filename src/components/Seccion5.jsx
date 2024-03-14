@@ -9,7 +9,7 @@ export const Seccion5 = () => {
           <h2 className='text-white text-base'>Proyectos Personales</h2>
         </div>
         <div className='z-10 h-full w-[20%] flex justify-center items-start py-4'>
-          <Link to="/proyectos" className='z-10'><FaArrowRightToBracket size={25} className='text-white'/></Link>
+          <a href='https://github.com/EmersonRoncancio?tab=repositories' className='z-10'><FaArrowRightToBracket size={25} className='text-white'/></a>
         </div>
       <video muted loop autoPlay playsInline className='z-0 object-cover w-full h-full absolute' src={projects}></video>
     </div>
