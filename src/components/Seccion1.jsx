@@ -9,7 +9,7 @@ export const Seccion1 = () => {
       </div>
       <div className='w-[60%] h-full flex flex-col justify-end items-start px-4 gap-8 pb-12 pl-4'>
         <h1 className='text-white lg:text-2xl'>Hola Soy Emerson👋</h1>
-          <p className='text-white text-wrap text-sm sm:text-base'>
+          <p className='text-white text-wrap text-xs sm:text-base'>
             ¡Hola! Soy Emerson Roncancio, desarrollador front-end con experiencia en <span className='text-orange-500 font-extrabold'>HTML</span>,
             <span className='text-blue-700 font-extrabold'>CSS</span>, <span className='text-yellow-500 font-extrabold'>JavaScript</span>,
             <span className='text-blue-900 font-extrabold'>React</span> y <span className='text-blue-700 font-extrabold'>Tailwind CSS</span>.
