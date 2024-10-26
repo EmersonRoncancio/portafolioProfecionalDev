@@ -6,9 +6,9 @@ export const Seccion9 = () => {
   return (
     <div className="md:col-span-2 rounded-lg relative overflow-hidden flex flex-col max-md:h-[300px]">
       <div className='z-10 w-full h-[50%] flex justify-between items-start p-3'>
-        <FaGithub className='text-white' size={40}/>
+        <FaGithub className='text-white' size={40} />
         <a href="https://github.com/EmersonRoncancio" target='_blank'>
-          <FaArrowRightToBracket className='text-white' size={30}/>
+          <FaArrowRightToBracket className='text-white' size={30} />
         </a>
       </div>
       <div className='z-10 w-full h-[50%] bg-gradient-to-t to-transparent from-gray-700 flex flex-col items-start justify-end p-3'>
