@@ -9,11 +9,14 @@ export const Seccion1 = () => {
       </div>
       <div className='w-[60%] h-full flex flex-col justify-end items-start px-4 gap-8 pb-12 pl-4'>
         <h1 className='text-white lg:text-2xl'>Hola Soy Emerson👋</h1>
-          <p className='text-white text-wrap text-xs sm:text-base'>
-            ¡Hola! Soy Emerson Roncancio, desarrollador front-end con experiencia en <span className='text-orange-500 font-extrabold'>HTML</span>,
-            <span className='text-blue-700 font-extrabold'>CSS</span>, <span className='text-yellow-500 font-extrabold'>JavaScript</span>,
-            <span className='text-blue-900 font-extrabold'>React</span> y <span className='text-blue-700 font-extrabold'>Tailwind CSS</span>.
-             Me especializo en crear interfaces web atractivas y dinámicas. ¡Listo para llevar tus proyectos al siguiente nivel!</p>
+        <p className='text-white text-wrap text-xs sm:text-base'>
+          ¡Hola! Soy Emerson Roncancio, desarrollador full stack con experiencia en
+          <span className='text-blue-900 font-extrabold'> React</span>, <span className='text-blue-700 font-extrabold'>Tailwind CSS</span>,
+          <span className='text-green-800 font-extrabold'> Node.js</span>, <span className='text-white font-extrabold'>Express</span>,
+          <span className='text-blue-800 font-extrabold'> TypeScript</span> y <span className='text-red-600 font-extrabold'>Nest.js</span>.
+          Me especializo en construir interfaces web atractivas y dinámicas, y en desarrollar aplicaciones sólidas tanto en el frontend como en
+          el backend. ¡Estoy listo para llevar tus proyectos al siguiente nivel!
+        </p>
       </div>
     </div>
   )
