@@ -5,9 +5,9 @@ import { IoLogoReact } from "react-icons/io5";
 import { SiTailwindcss } from "react-icons/si";
 import { FaBootstrap } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
-import { SiNextdotjs } from "react-icons/si";
-import { SiVite } from "react-icons/si";
-import { GrMysql } from "react-icons/gr";
+import { SiNestjs } from "react-icons/si";
+import { FaNodeJs } from "react-icons/fa";
+import { SiExpress } from "react-icons/si";
 
 export const Seccion3 = () => {
   return (
@@ -19,9 +19,9 @@ export const Seccion3 = () => {
       <SiTailwindcss size={45} className='invert self-center justify-self-end' />
       <FaBootstrap size={45} className='invert' />
       <BiLogoTypescript size={45} className='invert self-center justify-self-end' />
-      <SiNextdotjs size={45} className='invert' />
-      <GrMysql size={45} className='invert self-center justify-self-end' />
-      <SiVite size={45} className='invert' />
+      <FaNodeJs size={45} className='invert' />
+      <SiExpress size={45} className='invert self-center justify-self-end' />
+      <SiNestjs size={45} className='invert' />
     </div>
   )
 }
