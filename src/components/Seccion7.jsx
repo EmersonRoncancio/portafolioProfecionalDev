@@ -1,4 +1,3 @@
-
 export const Seccion7 = () => {
   return (
     <div className="bg-yellow-300 rounded-lg flex justify-center items-center p-8 max-md:h-[300px]">
@@ -8,5 +7,5 @@ export const Seccion7 = () => {
         <h4 className="text-lg m-0 font-medium text-white">años</h4>
       </div>
     </div>
-  )
-}
+  );
+};
