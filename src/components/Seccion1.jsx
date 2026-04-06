@@ -77,15 +77,15 @@ export const Seccion1 = ({ darkMode }) => {
           {/* Grid de tecnologías - responsive fluido */}
           <div className="flex flex-wrap justify-center md:justify-start gap-2 w-full">
             {[
-              { name: "NestJS", color: "red" },
-              { name: "Docker", color: "blue" },
-              { name: "Microservicios", color: "green" },
-              { name: "Linux", color: "orange" },
-              { name: "DevOps", color: "cyan" },
-              { name: "React + Angular", color: "blue" },
+              { name: "NestJS", bg: darkMode ? "bg-red-500/10" : "bg-red-500/20", border: "border-red-500/30", dot: "bg-red-400" },
+              { name: "Docker", bg: darkMode ? "bg-blue-500/10" : "bg-blue-500/20", border: "border-blue-500/30", dot: "bg-blue-400" },
+              { name: "Microservicios", bg: darkMode ? "bg-green-500/10" : "bg-green-500/20", border: "border-green-500/30", dot: "bg-green-400" },
+              { name: "Linux", bg: darkMode ? "bg-orange-500/10" : "bg-orange-500/20", border: "border-orange-500/30", dot: "bg-orange-400" },
+              { name: "DevOps", bg: darkMode ? "bg-cyan-500/10" : "bg-cyan-500/20", border: "border-cyan-500/30", dot: "bg-cyan-400" },
+              { name: "React + Angular", bg: darkMode ? "bg-purple-500/10" : "bg-purple-500/20", border: "border-purple-500/30", dot: "bg-purple-400" },
             ].map((tech, i) => (
-              <div key={i} className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border backdrop-blur-sm transition-transform hover:-translate-y-0.5 ${darkMode ? `bg-${tech.color}-500/10 border-${tech.color}-500/30` : `bg-${tech.color}-500/20 border-${tech.color}-500/30`}`}>
-                <span className={`w-1.5 h-1.5 rounded-full bg-${tech.color}-400 shrink-0`}></span>
+              <div key={i} className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border backdrop-blur-sm transition-transform hover:-translate-y-0.5 ${tech.bg} ${tech.border}`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${tech.dot} shrink-0`}></span>
                 <span className="font-bold text-xs sm:text-sm whitespace-nowrap">{tech.name}</span>
               </div>
             ))}
