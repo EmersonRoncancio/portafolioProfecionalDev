@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 257">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"></stop>
+      <stop offset="50%" stop-color="#16213e"></stop>
+      <stop offset="100%" stop-color="#0f3460"></stop>
+    </linearGradient>
+    <linearGradient id="codeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e94560"></stop>
+      <stop offset="100%" stop-color="#ff6b6b"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo con gradiente oscuro -->
+  <rect width="256" height="257" rx="48" fill="url(#bgGrad)"/>
+
+  <!-- Símbolos de código -->
+  <!-- < </> --> -->
+  <g transform="translate(128, 128)">
+    <!-- < -->
+    <path d="M-40 -15 L-60 0 L-40 15" stroke="url(#codeGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <!-- / -->
+    <path d="M-10 -25 L10 25" stroke="url(#codeGrad)" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+    <!-- > -->
+    <path d="M40 -15 L60 0 L40 15" stroke="url(#codeGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+    <!-- Puntos suspensivos -->
+    <circle cx="-30" cy="35" r="4" fill="#e94560"/>
+    <circle cx="0" cy="35" r="4" fill="#e94560"/>
+    <circle cx="30" cy="35" r="4" fill="#e94560"/>
+  </g>
+
+  <!-- Brillo decorativo -->
+  <circle cx="200" cy="50" r="30" fill="#e94560" opacity="0.1">
+    <animate attributeName="r" values="30;35;30" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.1;0.15;0.1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Texto DEV pequeño -->
+  <text x="128" y="230" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#e94560" opacity="0.8">DEV</text>
+</svg>
