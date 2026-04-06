@@ -66,7 +66,7 @@ export const Seccion1 = ({ darkMode }) => {
         </div>
 
         <h1 className={`text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-2 sm:mb-4 tracking-tight ${darkMode ? "text-white" : "text-white"} drop-shadow-lg`}>
-          Hola Soy <span className="inline-block">Emerson</span>👋
+          Hola Soy <span className={`inline-block animate-text-gradient bg-gradient-to-r ${darkMode ? "from-purple-400 via-blue-400 to-purple-400" : "from-yellow-300 via-white to-yellow-300"} bg-clip-text text-transparent`}>Emerson</span><span className="inline-block animate-waving-hand origin-bottom-right">👋</span>
         </h1>
 
         <div className={`space-y-3 sm:space-y-4 w-full ${darkMode ? "text-gray-300" : "text-white/95"} leading-relaxed flex flex-col items-center md:items-start`}>
