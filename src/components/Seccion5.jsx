@@ -2,18 +2,27 @@ import { Link } from "react-router-dom";
 import projects from "../assets/videoPro.mp4";
 import { FaArrowRightToBracket } from "react-icons/fa6";
 
-export const Seccion5 = () => {
+export const Seccion5 = ({ darkMode }) => {
   return (
-    <div className="md:col-span-2 rounded-lg relative overflow-hidden flex max-md:h-[300px]">
+    <div
+      className={`md:col-span-2 relative overflow-hidden flex max-md:h-[300px] ${darkMode ? "bg-gray-800" : ""} rounded-2xl md:rounded-[2rem]`}
+    >
       <div className="w-[80%] h-full flex justify-end z-10 px-5 p-3 font-mono flex-col gap-6">
-        <h2 className="text-white text-base">Proyectos Personales</h2>
+        <h2
+          className={`text-base ${darkMode ? "text-gray-100" : "text-white"}`}
+        >
+          Proyectos Personales
+        </h2>
       </div>
       <div className="z-10 h-full w-[20%] flex justify-center items-start py-4">
         <a
           href="https://github.com/EmersonRoncancio?tab=repositories"
           className="z-10"
         >
-          <FaArrowRightToBracket size={25} className="text-white" />
+          <FaArrowRightToBracket
+            size={25}
+            className={darkMode ? "text-gray-200" : "text-white"}
+          />
         </a>
       </div>
       <video
