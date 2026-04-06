@@ -84,7 +84,7 @@ export const Seccion1 = ({ darkMode }) => {
               { name: "DevOps", color: "cyan" },
               { name: "React + Angular", color: "blue" },
             ].map((tech, i) => (
-              <div key={i} className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border backdrop-blur-sm transition-transform hover:-translate-y-0.5 ${darkMode ? `bg-${tech.color}-500/10 border-${tech.color}-500/30` : 'bg-black/10 border-white/20'}`}>
+              <div key={i} className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border backdrop-blur-sm transition-transform hover:-translate-y-0.5 ${darkMode ? `bg-${tech.color}-500/10 border-${tech.color}-500/30` : `bg-${tech.color}-500/20 border-${tech.color}-500/30`}`}>
                 <span className={`w-1.5 h-1.5 rounded-full bg-${tech.color}-400 shrink-0`}></span>
                 <span className="font-bold text-xs sm:text-sm whitespace-nowrap">{tech.name}</span>
               </div>
