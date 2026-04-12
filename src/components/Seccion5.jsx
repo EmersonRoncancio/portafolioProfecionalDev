@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import projects from "../assets/videoPro.mp4";
 import { FaArrowRightToBracket } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 export const Seccion5 = ({ darkMode }) => {
+  const { t } = useTranslation();
   return (
     <div
       className={`md:col-span-2 relative overflow-hidden flex max-md:h-[300px] ${darkMode ? "bg-gray-800" : ""} rounded-2xl md:rounded-[2rem]`}
@@ -11,7 +13,7 @@ export const Seccion5 = ({ darkMode }) => {
         <h2
           className={`text-base ${darkMode ? "text-gray-100" : "text-white"}`}
         >
-          Proyectos Personales
+          {t('personal_projects')}
         </h2>
       </div>
       <div className="z-10 h-full w-[20%] flex justify-center items-start py-4">

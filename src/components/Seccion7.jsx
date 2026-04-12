@@ -1,6 +1,8 @@
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Seccion7 = ({ darkMode }) => {
+  const { t } = useTranslation();
   const calcularEdad = useMemo(() => {
     const fechaNacimiento = new Date(2004, 7, 8); // 8 de agosto de 2004 (meses en JS son 0-11)
     const hoy = new Date();
@@ -24,7 +26,7 @@ export const Seccion7 = ({ darkMode }) => {
         <p
           className={`text-xs m-0 font-semibold ${darkMode ? "text-gray-200" : "text-white"}`}
         >
-          EDAD
+          {t('age')}
         </p>
         <h2
           className={`text-[50px] m-0 font-extrabold ${darkMode ? "text-gray-100" : "text-slate-100"}`}
@@ -34,7 +36,7 @@ export const Seccion7 = ({ darkMode }) => {
         <h4
           className={`text-lg m-0 font-medium ${darkMode ? "text-gray-200" : "text-white"}`}
         >
-          años
+          {t('years')}
         </h4>
       </div>
     </div>

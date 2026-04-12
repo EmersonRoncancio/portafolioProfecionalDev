@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { FaNodeJs, FaDocker, FaLinux } from "react-icons/fa";
 import { IoLogoReact } from "react-icons/io5";
 import {
@@ -59,9 +60,10 @@ const techStack = [
 ];
 
 export const Seccion3 = ({ darkMode }) => {
+  const { t } = useTranslation();
   return (
     <div
-      className={`md:row-span-2 rounded-2xl md:rounded-[2rem] p-4 sm:p-6 lg:p-8 flex flex-col justify-center items-center shadow-2xl transition-all duration-500 relative overflow-hidden ${
+      className={`md:row-span-2 rounded-2xl md:rounded-[2rem] p-6 sm:p-6 lg:p-8 flex flex-col justify-center items-center shadow-2xl transition-all duration-500 relative overflow-hidden max-md:min-h-[300px] max-md:py-8 ${
         darkMode
           ? "bg-gray-800 border border-gray-700 shadow-gray-900/50"
           : "bg-gradient-to-br from-red-500 to-orange-500 shadow-red-500/30"
@@ -74,7 +76,7 @@ export const Seccion3 = ({ darkMode }) => {
         <h2
           className={`text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight ${darkMode ? "text-white" : "text-white"}`}
         >
-          Tech Stack
+          {t("techStack")}
         </h2>
         <div
           className={`h-1 sm:h-1.5 w-12 sm:w-16 mx-auto rounded-full mt-2 ${darkMode ? "bg-red-500" : "bg-white/50"}`}

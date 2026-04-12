@@ -14,8 +14,10 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
+    "i18next": "^26.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^17.0.2",
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.22.3",
     "zustand": "^4.5.2"

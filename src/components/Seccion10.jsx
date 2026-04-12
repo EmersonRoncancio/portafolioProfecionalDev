@@ -1,91 +1,127 @@
 import { useState } from "react";
-import { FaBriefcase, FaBuilding, FaLinkedin, FaExternalLinkAlt } from "react-icons/fa";
+import { FaBriefcase, FaLinkedin, FaExternalLinkAlt } from "react-icons/fa";
+import { BsStars } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
 
 export const Seccion10 = ({ darkMode }) => {
   const [isWorking] = useState(true);
+  const { t } = useTranslation();
 
   return (
     <div
-      className={`rounded-2xl md:rounded-[2rem] p-4 sm:p-5 md:p-6 flex flex-col justify-center h-full shadow-2xl transition-all duration-500 relative overflow-hidden ${
+      className={`group rounded-2xl md:rounded-[2rem] min-h-[300px] md:h-full md:max-h-[300px] shadow-2xl transition-all duration-500 relative overflow-hidden md:col-span-2 md:row-span-1 border-2 ${
         darkMode
-          ? "bg-gradient-to-br from-green-900 via-emerald-800 to-green-900 border border-green-700 shadow-green-900/50"
-          : "bg-gradient-to-br from-green-500 via-emerald-500 to-green-600 shadow-green-500/30"
+          ? "bg-gray-900 border-green-500/10 hover:border-green-500/30 shadow-green-900/20"
+          : "bg-gradient-to-br from-emerald-400 via-green-500 to-teal-600 border-white/30 shadow-green-500/30"
       }`}
     >
-      {/* Elementos decorativos de fondo */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className={`absolute top-4 right-4 w-16 h-16 rounded-full blur-2xl opacity-20 ${darkMode ? "bg-green-400" : "bg-white"} animate-pulse`}></div>
-        <div className={`absolute bottom-4 left-4 w-12 h-12 rounded-full blur-xl opacity-15 ${darkMode ? "bg-emerald-400" : "bg-yellow-300"} animate-pulse`}></div>
+      {/* Animated Background Orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          className={`absolute -top-20 -right-20 w-64 h-64 rounded-full blur-[60px] opacity-40 transition-transform duration-700 group-hover:scale-110 ${darkMode ? "bg-green-600" : "bg-white"}`}
+        ></div>
+        <div
+          className={`absolute -bottom-20 -left-20 w-64 h-64 rounded-full blur-[60px] opacity-30 transition-transform duration-700 group-hover:scale-110 ${darkMode ? "bg-teal-600" : "bg-yellow-200"}`}
+        ></div>
       </div>
 
-      {/* Badge de estado */}
-      <div className="relative z-10 flex justify-center mb-4">
-        <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold ${
-          isWorking
-            ? darkMode
-              ? "bg-green-500/30 text-green-300 border border-green-400/50"
-              : "bg-white/20 text-white border border-white/40"
-            : darkMode
-              ? "bg-gray-600/30 text-gray-400 border border-gray-500/50"
-              : "bg-gray-500/20 text-gray-200 border border-gray-400/40"
-        } backdrop-blur-sm shadow-lg`}>
-          <span className={`w-2.5 h-2.5 rounded-full ${isWorking ? "bg-green-400 animate-pulse" : "bg-gray-400"}`}></span>
-          {isWorking ? "Trabajando actualmente" : "Disponible"}
-        </div>
-      </div>
+      <div className="relative z-10 w-full h-full p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center justify-between">
+        {/* Left/Top Content */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left flex-1 w-full pt-2 md:pt-0">
+          {/* Badges Row */}
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-3 mb-4">
+            <div
+              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold backdrop-blur-md shadow-sm border ${
+                isWorking
+                  ? darkMode
+                    ? "bg-green-500/10 text-green-400 border-green-500/20"
+                    : "bg-white/20 text-white border-white/40"
+                  : darkMode
+                    ? "bg-gray-600/20 text-gray-400 border-gray-500/30"
+                    : "bg-gray-500/20 text-gray-200 border-gray-400/40"
+              }`}
+            >
+              <span className={`relative flex h-2.5 w-2.5`}>
+                {isWorking && (
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                )}
+                <span
+                  className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isWorking ? "bg-green-500" : "bg-gray-400"}`}
+                ></span>
+              </span>
+              {isWorking ? t("currently_working") : t("available")}
+            </div>
 
-      {/* Contenido principal */}
-      <div className="relative z-10 flex flex-col items-center justify-center flex-1 text-center">
-        {/* Icono principal */}
-        <div className={`mb-4 p-4 rounded-full ${darkMode ? "bg-green-800/50" : "bg-white/20"} backdrop-blur-sm`}>
-          <FaBriefcase className={`text-4xl sm:text-5xl ${darkMode ? "text-green-300" : "text-white"}`} />
-        </div>
+            <div
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold backdrop-blur-md border ${
+                darkMode
+                  ? "bg-white/5 text-gray-300 border-white/10"
+                  : "bg-black/10 text-white border-white/20"
+              }`}
+            >
+              <BsStars
+                className={darkMode ? "text-yellow-400" : "text-yellow-300"}
+              />
+              {t("full_time")}
+            </div>
+          </div>
 
-        {/* Información de la empresa */}
-        <h2 className={`text-2xl sm:text-3xl font-bold mb-2 ${darkMode ? "text-white" : "text-white"} drop-shadow-lg`}>
-          Mancii
-        </h2>
+          {/* Company & Role */}
+          <h2
+            className={`text-3xl md:text-4xl font-black mb-1 tracking-tight ${
+              darkMode
+                ? "text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-emerald-500"
+                : "text-white"
+            } drop-shadow-sm`}
+          >
+            Mancii
+          </h2>
 
-        <p className={`text-xs sm:text-sm mb-4 ${darkMode ? "text-green-200" : "text-green-100"}`}>
-          Backend Developer
-        </p>
+          <h3
+            className={`text-sm md:text-base font-bold mb-3 ${darkMode ? "text-gray-400" : "text-green-50"}`}
+          >
+            {t("backend_developer")}
+          </h3>
 
-        {/* Descripción */}
-        <div className={`max-w-xs mx-auto mb-4 p-3 rounded-lg ${darkMode ? "bg-green-900/40 border border-green-700/50" : "bg-white/10 border border-white/20"} backdrop-blur-sm`}>
-          <p className={`text-xs leading-relaxed ${darkMode ? "text-green-100" : "text-white/90"}`}>
-            Desarrollando soluciones robustas y escalables con tecnologías modernas
+          <p
+            className={`text-xs sm:text-sm max-w-[280px] md:max-w-[350px] leading-relaxed line-clamp-2 ${darkMode ? "text-gray-400" : "text-green-100"}`}
+          >
+            {t("developing_solutions")}
           </p>
         </div>
 
-        {/* Enlace a LinkedIn */}
-        <a
-          href="https://www.linkedin.com/company/mancii/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`group inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 hover:scale-105 ${
-            darkMode
-              ? "bg-blue-600/30 text-blue-300 border border-blue-500/50 hover:bg-blue-600/50"
-              : "bg-blue-600/20 text-blue-100 border border-blue-400/50 hover:bg-blue-600/40"
-          } backdrop-blur-sm shadow-lg`}
-        >
-          <FaLinkedin className="text-lg" />
-          <span>Ver empresa en LinkedIn</span>
-          <FaExternalLinkAlt className="text-xs group-hover:translate-x-1 transition-transform" />
-        </a>
+        {/* Right/Bottom Content - Interactive Elements */}
+        <div className="flex flex-row md:flex-col items-center justify-center gap-4 shrink-0 mt-4 md:mt-0 w-full md:w-auto pb-2 md:pb-0">
+          {/* Glowing Icon */}
+          <div
+            className={`relative flex items-center justify-center w-14 h-14 md:w-20 md:h-20 rounded-2xl md:rounded-3xl shadow-xl backdrop-blur-xl border transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3 ${
+              darkMode
+                ? "bg-gray-800/80 border-green-500/30 text-green-400 shadow-green-900/50"
+                : "bg-white/20 border-white/40 text-white shadow-black/10"
+            }`}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl md:rounded-3xl pointer-events-none"></div>
+            <FaBriefcase className="text-2xl md:text-4xl drop-shadow-md z-10" />
+          </div>
 
-        {/* Indicador de tiempo */}
-        <div className={`mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs ${
-          darkMode ? "bg-green-950/50 text-green-300" : "bg-green-900/30 text-green-100"
-        }`}>
-          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-          </svg>
-          <span>Full-time</span>
+          {/* Action Button */}
+          <a
+            href="https://www.linkedin.com/company/mancii/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`group/btn relative overflow-hidden flex-1 md:flex-none justify-center inline-flex items-center gap-2 px-5 py-3 md:py-2.5 rounded-xl text-sm font-bold transition-all duration-300 shadow-lg border ${
+              darkMode
+                ? "bg-blue-600/20 text-blue-400 border-blue-500/30 hover:bg-blue-600/30 hover:border-blue-400/50 hover:shadow-blue-900/50"
+                : "bg-white/20 text-white border-white/40 hover:bg-white/30 backdrop-blur-md"
+            }`}
+          >
+            <div className="absolute inset-0 w-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-500 ease-out group-hover/btn:w-full"></div>
+            <FaLinkedin className="text-lg relative z-10" />
+            <span className="relative z-10">{t("view_linkedin")}</span>
+            <FaExternalLinkAlt className="text-[10px] relative z-10 group-hover/btn:translate-x-1 transition-transform" />
+          </a>
         </div>
       </div>
-
-      {/* Efecto de brillo en hover */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
     </div>
   );
 };

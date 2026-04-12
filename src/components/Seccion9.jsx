@@ -1,11 +1,13 @@
 import videoGit from "../assets/laptop.mp4";
 import { FaGithub } from "react-icons/fa";
 import { FaArrowRightToBracket } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 export const Seccion9 = ({ darkMode }) => {
+  const { t } = useTranslation();
   return (
     <div
-      className={`md:col-span-2 rounded-lg relative overflow-hidden flex flex-col max-md:h-[300px] ${darkMode ? "bg-gray-800" : ""} rounded-2xl md:rounded-[2rem]`}
+      className={`md:col-span-2 md:row-span-1 rounded-lg relative overflow-hidden flex flex-col max-md:h-[300px] h-[300px] md:h-full md:max-h-[300px] ${darkMode ? "bg-gray-800" : ""} rounded-2xl md:rounded-[2rem]`}
     >
       <div className="z-10 w-full h-[50%] flex justify-between items-start p-3">
         <FaGithub
@@ -26,7 +28,7 @@ export const Seccion9 = ({ darkMode }) => {
           GitHub
         </h2>
         <p className={darkMode ? "text-gray-300" : "text-white"}>
-          Perfil de GitHub, donde subo mis proyectos personales
+          {t("github_desc")}
         </p>
       </div>
       <video
